@@ -1,11 +1,11 @@
 import Buttons from "./Buttons.jsx";
 
-const MidSection = () => {
+const HomePage = () => {
     return (
         <div className={"flex flex-col items-center justify-start flex-grow w-full"}>
-            <div className={"flex flex-col items-center w-full sm:w-[612px]"}>
-                <img src={"/BarBambi_WebsiteLogoAnimation_v2.gif"} className={"w-full"} alt={"main logo"}/>
-                <img src={"/Walk-Ins-Website-Animation.gif"}  className={"w-full h-auto"} alt={"underneath main"}/>
+            <div className={"flex flex-col items-center w-full sm:w-[612px] space-y-4"}>
+                <img src={"/BarBambi_WebsiteLogoAnimation_v2.gif"} className={"w-full hover:scale-[1.02] transition-transform duration-500 ease-in-out cursor-pointer"} alt={"main logo"}/>
+                <img src={"/Walk-Ins-Website-Animation.gif"}  className={"w-full h-auto hover:scale-[1.02] transition-transform duration-500 ease-in-out cursor-pointer"} alt={"underneath main"}/>
             </div>
 
             <div className={"w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-12"}>
@@ -23,4 +23,4 @@ const MidSection = () => {
         </div>
     )
 }
-export default MidSection
+export default HomePage

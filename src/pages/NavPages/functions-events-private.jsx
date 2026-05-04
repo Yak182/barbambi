@@ -3,7 +3,7 @@ import EnquiryForm from "../../components/enquiry-form.jsx";
 
 const FunctionsEventsPrivate = () => {
     return (
-        <div>
+        <div className={"flex flex-col items-center justify-center"}>
             <HeaderNews title={"FUNCTIONS, EVENTS & PRIVATE DINING\n"} />
 
             <p className={"paragraph-styles"}>

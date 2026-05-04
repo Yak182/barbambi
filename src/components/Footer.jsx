@@ -34,7 +34,12 @@ const Footer = () => {
             </div>
 
             <div className={"flex flex-col items-center sm:justify-center"}>
-                <img src={"/BambiCrown.png"} alt={"BMC"} className={"cursor-pointer"} onClick={handleAudio} />
+                <img
+                    src={"/BambiCrown.png"}
+                    alt={"BMC"}
+                    className={"cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"}
+                    onClick={handleAudio}
+                />
             </div>
 
             <div className={"flex flex-col items-center sm:items-end sm:justify-end text-bar-bambi-gold underline font-bar-bambi"}>

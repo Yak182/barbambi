@@ -9,15 +9,8 @@
     --color-bar-bambi-gold: #C8937E;
     --font-bar-bambi: "EngraversGothic", sans-serif;
     --font-unique: "Editorial", serif;
-
-    --color-primary: #C8937E;
-    --color-border: #C8937E;
-    --color-input: #C8937E;
-    --color-ring: #C8937E;
-    --radius-lg: 0rem;
-    --color-foreground: #C8937E;
-    --color-background: transparent;
 }
+
 @font-face {
     font-family: 'EngraversGothic';
     src: url('../fonts/EngraversGothicBT.otf') format('opentype');
@@ -80,6 +73,14 @@
     }
 }
 
+.placeholder-grey::placeholder {
+    color: #aba6a6;
+}
+
+select:has(option[value=""]:checked) {
+    color: #aba6a6;
+}
+
 body {
     background-image: url(/bgImage_2.png);
     background-attachment: fixed;
@@ -88,11 +89,3 @@ body {
     color: #C8937E;
 }
 
-@layer base {
-    * {
-        @apply border-border/50;
-    }
-    body {
-        @apply bg-background text-foreground;
-    }
-}

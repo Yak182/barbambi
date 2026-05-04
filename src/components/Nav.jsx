@@ -28,7 +28,7 @@ const Nav = () => {
             <div className={"text-lg text-white text-center mt-4 px-4 flex justify-between items-center relative z-50"}>
                 <div>
                     <a href={"/"} className={"align-middle size-1"}>
-                        <img src="/favicon.svg" alt={"logo"} className={"w-7 transition-transform duration-300 ease-in-out hover:scale-108 "}/>
+                        <img src="/favicon.svg" alt={"logo"} className={"w-7 transition-transform duration-300 ease-in-out hover:scale-110 cursor-pointer"}/>
                     </a>
                 </div>
 
