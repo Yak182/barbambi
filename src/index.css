@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
+
+
+
+@theme {
+    --color-bar-bambi-gold: #C8937E;
+    --font-bar-bambi: "EngraversGothic", sans-serif;
+    --font-unique: "Editorial", serif;
+
+    --color-primary: #C8937E;
+    --color-border: #C8937E;
+    --color-input: #C8937E;
+    --color-ring: #C8937E;
+    --radius-lg: 0rem;
+    --color-foreground: #C8937E;
+    --color-background: transparent;
+}
+@font-face {
+    font-family: 'EngraversGothic';
+    src: url('../fonts/EngraversGothicBT.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes fly-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fly-in {
+    animation: fly-in 0.2s ease-out forwards;
+}
+
+.button-design {
+    font-family: 'Cormorant Garamond', 'Garamond', 'Times New Roman', serif;
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+
+    background: linear-gradient(
+            135deg,
+            #c49a7a 0%,
+            #b5855f 20%,
+            #c8a882 40%,
+            #b89060 60%,
+            #a87d5a 80%,
+            #c4a070 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.paragraph-styles {
+    text-transform: uppercase;
+    text-align: center;
+    color: #C8937E;
+    font-family: "Engravers", "sans-serif" ;
+    white-space: pre-line;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 0 100px;
+    font-weight: 100;
+    line-height: normal;
+
+    @media (min-width: 700px) {
+        margin: 0 300px
+    }
+}
+
+body {
+    background-image: url(/bgImage_2.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: #C8937E;
+}
+
+@layer base {
+    * {
+        @apply border-border/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
