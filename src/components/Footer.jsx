@@ -15,7 +15,7 @@ const Footer = () => {
     }
 
     return (
-        <footer className={"flex flex-col sm:flex-row mt-auto items-center sm:justify-between px-4 py-8 sm:py-4 gap-6 sm:gap-0"}>
+        <footer className={"relative flex flex-col sm:flex-row mt-auto items-center sm:justify-between px-4 py-8 sm:py-4 gap-6 sm:gap-0"}>
             <div className={"flex flex-col gap-1 items-center sm:items-start sm:justify-start"}>
                 <Link
                     to={"https://www.google.com/maps/place/Bar+Bambi/@-37.8156162,144.968832,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad643b82c379a77:0x5ef07bf935d92aab!8m2!3d-37.8156326!4d144.9709787?shorturl=1"}
@@ -33,7 +33,7 @@ const Footer = () => {
                 </Link>
             </div>
 
-            <div className={"flex flex-col items-center sm:justify-center"}>
+            <div className={"flex flex-col items-center sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:ml-[-10px]"}>
                 <img
                     src={"/BambiCrown.png"}
                     alt={"BMC"}

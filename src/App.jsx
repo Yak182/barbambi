@@ -12,6 +12,7 @@ import FunctionsEventsPrivate from "./pages/NavPages/functions-events-private.js
 import Contact from "@/pages/NavPages/Contact.jsx";
 import Media from "@/pages/NavPages/media.jsx";
 import Employment from "@/pages/NavPages/employment.jsx";
+import TCs from "@/pages/NavPages/t&cs.jsx";
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                     <Route path={"/contact"} element={<Contact />}/>
                     <Route path={"/media"} element={<Media />}/>
                     <Route path={"/employment"} element={<Employment />}/>
+                    <Route path={"/t&cs"} element={<TCs />}/>
                 </Routes>
             <Footer />
         </main>
