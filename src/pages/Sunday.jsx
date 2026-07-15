@@ -5,7 +5,7 @@ import DrinkResponsibly from "../components/drink-responsibly.jsx";
 const Sunday = () => {
     return (
         <div className={"text-center"}>
-            <HeaderNews title={"sunday night lasagne special"} />
+            <HeaderNews title={"Sunday Sessions"} />
 
             <div className={"paragraph-styles"}>
                 <p>new season, new night! every sunday with a side of rnb.</p>

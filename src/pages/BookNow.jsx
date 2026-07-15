@@ -1,10 +1,10 @@
 import HeaderNews from "../components/Header-News.jsx";
 import Selectors from "../components/selectors.jsx";
 
-const Reservations = () => {
+const BookNow = () => {
     return (
         <div>
-            <HeaderNews title={"Reservations"}/>
+            <HeaderNews title={"BookNow"}/>
 
             <div className={"paragraph-styles"}>
                 <p>BAR BAMBI IS A LATE NIGHT BAR SERVING ITALIAN COCKTAILS, WINE, SHARE PLATES & MUSIC THURSDAY - SUNDAY NIGHT.</p>
@@ -23,4 +23,4 @@ const Reservations = () => {
         </div>
     )
 }
-export default Reservations
+export default BookNow
