@@ -16,6 +16,7 @@ export default class Figure {
 
 		this.smoothMouse = { x: 0, y: 0 }
 		this.hoverStrength = 0
+		this.circleSharpness = 2
 		this.startTime = Date.now()
 
 		this.createMesh()
@@ -32,14 +33,18 @@ export default class Figure {
 
 	createMesh() {
 		const rect = this.element.getBoundingClientRect()
+		const containerRect = this.element.parentElement.getBoundingClientRect()
 		const { heightInUnits } = this.getViewportDimensions()
-		const pixelToUnit = heightInUnits / window.innerHeight
+		const pixelToUnit = heightInUnits / containerRect.height
 
 		const planeWidth = rect.width * pixelToUnit
 		const planeHeight = rect.height * pixelToUnit
 
-		const x = (rect.left + rect.width / 2 - window.innerWidth / 2) * pixelToUnit
-		const y = -(rect.top + rect.height / 2 - window.innerHeight / 2) * pixelToUnit
+		this.sizeFactor = Math.max(rect.width, rect.height) / 300
+		this.circleSharpness = 2 * this.sizeFactor
+
+		const x = (rect.left - containerRect.left + rect.width / 2 - containerRect.width / 2) * pixelToUnit
+		const y = -(rect.top - containerRect.top + rect.height / 2 - containerRect.height / 2) * pixelToUnit
 
 		this.geometry = new THREE.PlaneGeometry(planeWidth, planeHeight, 32, 32)
 
@@ -49,6 +54,7 @@ export default class Figure {
 				uHoverTexture: { value: this.hoverTexture },
 				uMouse: { value: new THREE.Vector2(0.5, 0.5) },
 				uHoverStrength: { value: 0 },
+				uCircleSharpness: { value: this.circleSharpness },
 				uTime: { value: 0 },
 				uResolution: { value: new THREE.Vector2(planeWidth, planeHeight) }
 			},
@@ -68,29 +74,31 @@ export default class Figure {
 		this.material.uniforms.uTime.value = (Date.now() - this.startTime) / 1000
 		this.material.uniforms.uMouse.value.set(this.smoothMouse.x, 1.0 - this.smoothMouse.y)
 		this.material.uniforms.uHoverStrength.value = this.hoverStrength
+		this.material.uniforms.uCircleSharpness.value = this.circleSharpness
 	}
 
 	addMouseListeners() {
-		this.element.addEventListener('mouseenter', this.onMouseEnter.bind(this))
-		this.element.addEventListener('mousemove', this.onMouseMove.bind(this))
-		this.element.addEventListener('mouseleave', this.onMouseLeave.bind(this))
+		this.element.parentElement.addEventListener('mouseenter', this.onMouseEnter.bind(this))
+		this.element.parentElement.addEventListener('mousemove', this.onMouseMove.bind(this))
+		this.element.parentElement.addEventListener('mouseleave', this.onMouseLeave.bind(this))
 	}
 
 	onMouseEnter() {
 		gsap.killTweensOf(this)
-		gsap.to(this, { hoverStrength: 1, duration: 0.5, ease: 'power2.out' })
+		gsap.to(this, { hoverStrength: 1, circleSharpness: 1 * this.sizeFactor, duration: 0.5, ease: 'power2.out' })
 	}
 
 	onMouseLeave() {
 		gsap.killTweensOf(this)
-		gsap.to(this, { hoverStrength: 0, duration: 0.5, ease: 'power2.out' })
+		gsap.to(this, { hoverStrength: 0, circleSharpness: 1 * this.sizeFactor, duration: 0.5, ease: 'power2.out' })
 	}
 
 	onMouseMove(e) {
 		gsap.killTweensOf(this.smoothMouse)
-		const rect = this.element.getBoundingClientRect()
-		const x = (e.clientX - rect.left) / rect.width
-		const y = (e.clientY - rect.top) / rect.height
+		const containerRect = this.element.parentElement.getBoundingClientRect()
+		const x = (e.clientX - containerRect.left) / containerRect.width
+		const y = (e.clientY - containerRect.top) / containerRect.height
+		
 		gsap.to(this.smoothMouse, { x, y, duration: 0.5, ease: 'power2.out' })
 	}
 }

@@ -37,7 +37,7 @@ const Footer = () => {
                 <img
                     src={"/BambiCrown.png"}
                     alt={"BMC"}
-                    className={"cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out"}
+                    className={" hover:scale-110 transition-transform duration-300 ease-in-out"}
                     onClick={handleAudio}
                 />
             </div>

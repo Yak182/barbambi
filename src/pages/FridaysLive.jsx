@@ -1,7 +1,8 @@
 import HeaderNews from "../components/Header-News.jsx";
 import Selectors from "../components/selectors.jsx";
+import Buttons from "@/components/Buttons.jsx";
 
-const PastaParty = () => {
+const FridaysLive = () => {
 	return (
 		<div>
 			<div className={"flex flex-col items-center"}>
@@ -9,10 +10,8 @@ const PastaParty = () => {
 			</div>
 
 			<div className={"flex flex-col items-center paragraph-styles text-lg font-bold"}>
-				<p></p>
-				<p>TESTING</p>
-				<p></p>
-			</div>
+				<Buttons label={"book now"} to={"/book-now"} hoverSrc="/gradient-bg.png" />
+ 			</div>
 
 			<div className={"flex justify-center mt-10"}>
 				<Selectors title={"Book now"}  className={"!w-[250px] !text-lg "}/>
@@ -21,4 +20,4 @@ const PastaParty = () => {
 		</div>
 	)
 }
-export default PastaParty
+export default FridaysLive

@@ -52,7 +52,7 @@ const MediaCard = ({ src, alt, href, title }) => {
                 <img 
                     src={src}
                     alt={alt}
-                    className={"w-50 h-50 hover:scale-110 transition-transform duration-500 ease-in-out cursor-pointer object-cover"}
+                    className={"w-50 h-50 hover:scale-110 transition-transform duration-500 ease-in-out  object-cover"}
                 />
             </a>
             {title}

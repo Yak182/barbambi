@@ -6,8 +6,8 @@ uniform vec2 uMouse;
 uniform float uHoverStrength;
 uniform float uTime;
 uniform vec2 uResolution;
+uniform float uCircleSharpness;
 
-// Simplex noise inlined — no import needed
 vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
 vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
 vec4 permute(vec4 x) { return mod289(((x * 34.0) + 1.0) * x); }
@@ -83,7 +83,7 @@ void main() {
 
     float circle = distance(vUv * aspect, mouse * aspect);
     circle = 1.0 - circle;
-    circle = pow(circle, 5.0) * uHoverStrength;
+    circle = pow(circle, uCircleSharpness) * uHoverStrength;
 
     float n = snoise(vec3(vUv * 6.0, uTime * 0.5));
 

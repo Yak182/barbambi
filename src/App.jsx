@@ -14,10 +14,12 @@ import Employment from "@/pages/NavPages/employment.jsx";
 import TCs from "@/pages/NavPages/t&cs.jsx";
 import FridaysLive from "@/pages/FridaysLive.jsx";
 import Saturday from "@/pages/Saturday.jsx";
+import CustomCursor from "./components/CustomCursor.jsx";
 
 function App() {
     return (
         <main className='flex flex-col min-h-screen bg-[url(/gradient-bg.png)] bg-cover bg-center bg-no-repeat xl:bg-fixed'>
+            <CustomCursor />
             <Nav />
                 <Routes>
                     <Route path="/" element={<HomePage />} />

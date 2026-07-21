@@ -2,33 +2,34 @@ import * as THREE from 'three'
 import Figure from './Figure'
 
 export default class Scene {
-	constructor(element) {
+	constructor(element, container) {
 		this.element = element
+		this.container = container
 
 		this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
 		this.renderer.setPixelRatio(window.devicePixelRatio)
 
-		document.body.appendChild(this.renderer.domElement)
+		this.container.appendChild(this.renderer.domElement)
 
-		this.renderer.domElement.style.position = 'fixed'
+		this.renderer.domElement.style.position = 'absolute'
 		this.renderer.domElement.style.top = 0
 		this.renderer.domElement.style.left = 0
-		this.renderer.domElement.style.width = '100vw'
-		this.renderer.domElement.style.height = '100vh'
-		this.renderer.domElement.style.zIndex = 10
+		this.renderer.domElement.style.width = '100%'
+		this.renderer.domElement.style.height = '100%'
+		this.renderer.domElement.style.zIndex = 1
 		this.renderer.domElement.style.pointerEvents = 'none'
 
 		this.scene = new THREE.Scene()
 
 		this.camera = new THREE.PerspectiveCamera(
 			70,
-			window.innerWidth / window.innerHeight,
+			this.container.offsetWidth / this.container.offsetHeight,
 			0.001,
 			1000
 		)
 		this.camera.position.z = 600
 
-		this.renderer.setSize(window.innerWidth, window.innerHeight)
+		this.renderer.setSize(this.container.offsetWidth, this.container.offsetHeight)
 
 		this.figure = new Figure(this.scene, this.camera, this.element)
 
@@ -42,8 +43,8 @@ export default class Scene {
 	}
 
 	onResize() {
-		this.renderer.setSize(window.innerWidth, window.innerHeight)
-		this.camera.aspect = window.innerWidth / window.innerHeight
+		this.renderer.setSize(this.container.offsetWidth, this.container.offsetHeight)
+		this.camera.aspect = this.container.offsetWidth / this.container.offsetHeight
 		this.camera.updateProjectionMatrix()
 	}
 

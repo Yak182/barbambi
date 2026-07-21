@@ -52,6 +52,13 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.group:hover .button-design {
+    background: none;
+    -webkit-text-fill-color: white;
+    color: white;
 }
 
 .paragraph-styles {
@@ -80,6 +87,7 @@
 select:has(option[value=""]:checked) {
     color: #aba6a6;
 }
+
 
 body {
     background-image: url(/gradient-bg.png);
@@ -119,3 +127,25 @@ canvas {
     z-index: 9;
 }
 
+html, body, a, button, input, select, textarea, [role="button"] {
+    cursor: none !important;
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #FFFFFF; /* Change to your brand color */
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.custom-cursor.hovered {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.25;
+}

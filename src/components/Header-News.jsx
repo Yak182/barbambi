@@ -5,7 +5,7 @@ const HeaderNews = ({title, hideImage = false, className = "",}) => {
                 <a href={"/"}>
                     <img
                         src={"/logo.svg"}
-                        className={"w-full hover:scale-[1.05] transition-transform duration-500 ease-in-out cursor-pointer"}
+                        className={"w-full hover:scale-[1.05] transition-transform duration-500 ease-in-out "}
                         alt={"header-logo"}
                     />
                 </a>
