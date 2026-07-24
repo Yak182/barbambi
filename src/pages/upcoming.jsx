@@ -1,10 +1,10 @@
 import HeaderNews from "../components/Header-News.jsx";
 import Buttons from "../components/Buttons.jsx";
-import GooeyImage from "@/components/GooeyImage/index.jsx";
+import GooeyEffect from "@/components/GooeyEffect/index.jsx";
 
 const Upcoming = () => {
     return (
-        <GooeyImage
+        <GooeyEffect
             hoverSrc="/bgImage_2.png"
             className="w-full min-h-screen"
             childrenClassName="w-full pt-12"
@@ -15,7 +15,7 @@ const Upcoming = () => {
                     <Buttons label={"testing"} to={"/"} />
                 </div>
             </div>
-        </GooeyImage>
+        </GooeyEffect>
     )
 }
 

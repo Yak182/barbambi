@@ -25,14 +25,14 @@ const Nav = () => {
 
     return (
 			<nav className={"relative"}>
-				<div className={"text-lg text-white text-center p-4 px-4 flex justify-between items-center relative z-50 border-b-1  "}>
+				<div className={"text-lg text-white text-center p-4 px-4 flex justify-between items-center relative z-[70] backdrop-blur-md border-b border-slate-900/5 shadow-sm  "}>
 					<div>
 						<a href={"/"} className={"align-middle size-1"}>
 							<img src="/favicon.svg" alt={"logo"} className={"w-7 transition-transform duration-300 ease-in-out hover:scale-110 "}/>
 						</a>
 					</div>
 
-					<div>
+					<div className={""}>
 						<button onClick={toggleMenu} className={"focus:outline-none"}>
 							{isMenuOpen ? (
 								<X className={"text-bar-bambi-gold size-8 "}/>
@@ -44,7 +44,7 @@ const Nav = () => {
 				</div>
 
 				{isMenuOpen && (
-					<div className={"fixed inset-0 bg-black/90 z-40 flex flex-col items-center justify-start pt-24 space-y-4 text-white text-2xl font-unique transition-all duration-300 ease-in-out"}>
+					<div className={"fixed inset-0 bg-black/90 z-[60] flex flex-col items-center justify-start pt-24 space-y-4 text-white text-2xl font-unique transition-all duration-300 ease-in-out"}>
 						{navLinks.map((link, index) => (
 							<Link
 								key={link.to}
