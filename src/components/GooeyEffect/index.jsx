@@ -7,8 +7,7 @@ export default function GooeyEffect({
 									   className,
 									   children,
 									   childrenClassName,
-									   overlay,
-									   overlayClassName = "absolute inset-0"
+										style,
 								   }) {
 	const imageRef = useRef(null)
 	const containerRef = useRef(null)
@@ -49,13 +48,13 @@ export default function GooeyEffect({
 	}, [])
 
 	return (
-		<div ref={containerRef} className={`relative ${className}`}>
+		<div ref={containerRef} className={`relative ${className}`} style={style}>
 			<img
 				ref={imageRef}
 				src={src}
 				data-hover={hoverSrc}
 				crossOrigin="anonymous"
-				className="absolute inset-0 w-full h-full opacity-0 object-contain"
+				className="absolute inset-0 w-full h-full opacity-0 object-center object-cover"
 				alt={""}
 			/>
 			{children && (

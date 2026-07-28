@@ -81,8 +81,8 @@ void main() {
     vec4 image = texture2D(uTexture, vUv);
     vec4 hover = texture2D(uHoverTexture, vUv);
 
-    float circle = distance(vUv * aspect, mouse * aspect);
-    circle = 1.0 - circle;
+    float circle = distance(vUv * aspect, mouse * aspect) * 0.5;
+    circle = 1.0 - clamp(circle, 0.0, 1.0);
     circle = pow(circle, uCircleSharpness) * uHoverStrength;
 
     float n = snoise(vec3(vUv * 6.0, uTime * 0.5));

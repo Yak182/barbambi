@@ -36,6 +36,7 @@ function App() {
                     <Route path={"/media"} element={<Media />}/>
                     <Route path={"/employment"} element={<Employment />}/>
                     <Route path={"/t&cs"} element={<TCs />}/>
+                    <Route path={"/concept-1"} element={<HomePageV2 />}/>
                 </Routes>
             <Footer />
 

@@ -59,6 +59,7 @@
     background: none;
     -webkit-text-fill-color: white;
     color: white;
+    font-size: 35px;
 }
 
 .paragraph-styles {
@@ -88,6 +89,26 @@ select:has(option[value=""]:checked) {
     color: #aba6a6;
 }
 
+.hover-wipe {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-wipe .wipe-overlay,
+.hover-wipe .wipe-overlay-white {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 2s ease-in-out;
+}
+
+.hover-wipe .wipe-overlay { filter: url(#outline-black); }
+.hover-wipe .wipe-overlay-white { filter: url(#outline-white); }
+
+.hover-wipe:hover .wipe-overlay,
+.hover-wipe:hover .wipe-overlay-white {
+    clip-path: inset(0 0 0 0);
+}
 
 body {
     background-image: url(/gradient-bg.png);

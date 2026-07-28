@@ -1,6 +1,7 @@
 import {useState} from "react";
 import { Menu, X } from 'lucide-react'
 import {Link} from "react-router-dom";
+import Buttons from "@/components/Buttons.jsx";
 
 const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,13 +25,20 @@ const Nav = () => {
     ];
 
     return (
-			<nav className={"relative"}>
+			<nav className={"sticky top-0 z-[70] w-full  border-slate-900/5 "}>
 				<div className={"text-lg text-white text-center p-4 px-4 flex justify-between items-center relative z-[70] backdrop-blur-md border-b border-slate-900/5 shadow-sm  "}>
 					<div>
 						<a href={"/"} className={"align-middle size-1"}>
 							<img src="/favicon.svg" alt={"logo"} className={"w-7 transition-transform duration-300 ease-in-out hover:scale-110 "}/>
 						</a>
 					</div>
+
+				{!isMenuOpen && (
+					<div className={"flex gap-4 "}>
+						<Buttons label={"1"} to={"/"} className={"!w-30 !text-sm !bg-transparent"}/>
+						<Buttons label={"2"} to={"/concept-1"} className={"!w-30 !text-sm "}/>
+					</div>
+				)}
 
 					<div className={""}>
 						<button onClick={toggleMenu} className={"focus:outline-none"}>

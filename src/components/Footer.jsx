@@ -1,8 +1,7 @@
 import {Link} from "react-router-dom";
-import { FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import DashboardTune from '/audio/PianoMusic.mp3'
 import {useRef} from "react";
-
 
 
 const Footer = () => {
@@ -42,21 +41,27 @@ const Footer = () => {
                 />
             </div>
 
-            <div className={"flex flex-col items-center sm:items-end sm:justify-end text-bar-bambi-gold underline font-bar-bambi"}>
-                <Link
-                      to={"https://www.instagram.com/barbambi_melbourne/?hl=en"}
-                      target={"_blank"}
-                      className={"flex hover:scale-109 mb-1"}
-                >
-                    <FaInstagram className={"size-5"}/>
-
-                </Link>
-                <a
-                    href={"tel: +0370202691"}
-                >
-                    (03) 7020 2691
-                </a>
-            </div>
+			<div className={"flex flex-col items-center sm:items-end sm:justify-end"}>
+				<div className={"flex items-center sm:items-end sm:justify-end text-bar-bambi-gold underline font-bar-bambi gap-x-2"}>
+					<Link
+						  to={"https://www.instagram.com/barbambi_melbourne/?hl=en"}
+						  target={"_blank"}
+						  className={"flex hover:scale-109 mb-1"}
+					>
+						<FaInstagram className={"size-5"}/>
+					</Link>
+					<Link to={"https://www.facebook.com/BarBambiMelbourne1/"} target={"_blank"} className={"flex hover:scale-109 mb-1"} >
+							<FaFacebook	className={"size-5"}/>
+					</Link>
+				</div>
+				<div className={"flex flex-col items-center sm:items-end sm:justify-end text-bar-bambi-gold underline font-bar-bambi"}>
+					<a
+						href={"tel: +0370202691"}
+					>
+						(03) 7020 2691
+					</a>
+				</div>
+			</div>
 
         </footer>
     )

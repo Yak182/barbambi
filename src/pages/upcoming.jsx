@@ -1,20 +1,19 @@
-import HeaderNews from "../components/Header-News.jsx";
-import Buttons from "../components/Buttons.jsx";
 import GooeyEffect from "@/components/GooeyEffect/index.jsx";
 
 const Upcoming = () => {
     return (
         <GooeyEffect
-            hoverSrc="/bgImage_2.png"
+            hoverSrc="/"
             className="w-full min-h-screen"
             childrenClassName="w-full pt-12"
         >
-            <HeaderNews title={"Upcoming Events"} />
-            <div className={"w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-12"}>
-                <div className={"flex flex-wrap justify-center gap-x-8 gap-y-8"}>
-                    <Buttons label={"testing"} to={"/"} />
-                </div>
-            </div>
+			<div className={"flex flex-col items-center justify-center w-full bg-red-500"}>
+				<div>
+					<div className={""}>
+					</div>
+				</div>
+			</div>
+
         </GooeyEffect>
     )
 }
