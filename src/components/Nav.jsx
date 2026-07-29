@@ -15,7 +15,7 @@ const Nav = () => {
         { to: "/about", label: "About" },
         { to: "/upcoming", label: "UPCOMING EVENTS" },
         { to: "/open-hours", label: "open hours" },
-        { to: "/reservations", label: "reservations" },
+        { to: "/book-now", label: "reservations" },
         { to: "/menu", label: "menu" },
         { to: "/functions", label: "functions, events & private dining" },
         { to: "/contact", label: "contact" },
@@ -25,7 +25,7 @@ const Nav = () => {
     ];
 
     return (
-			<nav className={"sticky top-0 z-[70] w-full  border-slate-900/5 "}>
+			<nav className={"sticky top-0 z-[80] w-full  border-slate-900/5 "}>
 				<div className={"text-lg text-white text-center p-4 px-4 flex justify-between items-center relative z-[70] backdrop-blur-md border-b border-slate-900/5 shadow-sm  "}>
 					<div>
 						<a href={"/"} className={"align-middle size-1"}>
@@ -37,6 +37,12 @@ const Nav = () => {
 					<div className={"flex gap-4 "}>
 						<Buttons label={"1"} to={"/"} className={"!w-30 !text-sm !bg-transparent"}/>
 						<Buttons label={"2"} to={"/concept-1"} className={"!w-30 !text-sm "}/>
+						<Buttons label={"3"} to={"/Book-now"} className={"!w-30 !text-sm "}/>
+						<Buttons label={"4"} to={"/sunday-sessions"} className={"!w-30 !text-sm "}/>
+						<Buttons label={"5"} to={"/thursday-pasta-party"} className={"!w-30 !text-sm "}/>
+						<Buttons label={"6"} to={"/upcoming"} className={"!w-30 !text-sm "}/>
+						<Buttons label={"7"} to={"/about"} className={"!w-30 !text-sm "}/>
+
 					</div>
 				)}
 

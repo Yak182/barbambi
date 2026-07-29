@@ -1,5 +1,5 @@
 import HeaderNews from "@/components/Header-News.jsx";
-import EnquiryForm from "@/components/enquiry-form.jsx";
+import ContactEnquiryForm from "@/components/contact-enquiry-form.jsx";
 
 const Contact = () => {
     return (
@@ -11,7 +11,7 @@ const Contact = () => {
                 <p>SEND LOVE NOTES, SECRETS AND ENQUIRIES:</p>
             </div>
 
-            <EnquiryForm />
+			<ContactEnquiryForm />
         </div>
     )
 }

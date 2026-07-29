@@ -1,6 +1,6 @@
 import Nav from "./components/Nav.jsx";
 import Footer from "./components/Footer.jsx";
-import HomePage from "./components/HomePage.jsx";
+import HomePage from "./pages/HomePage.jsx";
 import {Routes, Route} from "react-router-dom";
 import BookNow from "./pages/BookNow.jsx";
 import PastaParty from "./pages/Pasta-party.jsx";
@@ -15,7 +15,9 @@ import TCs from "@/pages/NavPages/t&cs.jsx";
 import FridaysLive from "@/pages/FridaysLive.jsx";
 import Saturday from "@/pages/Saturday.jsx";
 import CustomCursor from "./components/CustomCursor.jsx";
-import HomePageV2 from "@/components/HomePagev2.jsx";
+import HomePageV2 from "@/pages/HomePagev2.jsx";
+import About from "@/pages/NavPages/About.jsx";
+import Hours from "@/pages/NavPages/Hours.jsx";
 
 function App() {
     return (
@@ -37,6 +39,8 @@ function App() {
                     <Route path={"/employment"} element={<Employment />}/>
                     <Route path={"/t&cs"} element={<TCs />}/>
                     <Route path={"/concept-1"} element={<HomePageV2 />}/>
+                    <Route path={"/about"} element={<About />}/>
+                    <Route path={"/open-hours"} element={<Hours />}/>
                 </Routes>
             <Footer />
 

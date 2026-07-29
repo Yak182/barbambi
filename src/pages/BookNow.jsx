@@ -11,7 +11,7 @@ const BookNow = () => {
 			childrenClassName="w-full"
 		>
 				<div>
-					<HeaderNews title={"BookNow"}/>
+					<HeaderNews title={"Book Now"}/>
 
 					<div className={"paragraph-styles"}>
 						<p>BAR BAMBI IS A LATE NIGHT BAR SERVING ITALIAN COCKTAILS, WINE, SHARE PLATES & MUSIC THURSDAY - SUNDAY NIGHT.</p>

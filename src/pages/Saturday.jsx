@@ -1,34 +1,32 @@
-import HeaderNews from "../components/Header-News.jsx";
-import Selectors from "../components/selectors.jsx";
-import GooeyEffect from "@/components/GooeyEffect/index.jsx";
 
+import Gif from "@/components/Gif.jsx";
+import GooeyEffect from "@/components/GooeyEffect/index.jsx";
+import Buttons from "@/components/Buttons.jsx";
+import HeaderNews from "@/components/Header-News.jsx";
 
 const Saturday = () => {
 	return (
 		<GooeyEffect
-			src={"public/media-photos/Firefly_Gemini Flash_seed286072.png"}
-			hoverSrc={"public/media-photos/Firefly_now update the image so every one in the picture is dancing 422135.png"}
-			className="w-full min-h-screen"
-			childrenClassName="w-full"
+			src={"/gradient-bg.png"}
+			hoverSrc=""
+			className="w-full min-h-screen overflow-hidden"
+			childrenClassName="w-full "
 		>
-		<div>
-			<div className={"flex flex-col items-center"}>
-				<HeaderNews title={"Saturday Dinner and Disco"} className={"!py-2 !mb-0"} />
-			</div>
+			<div className={"flex justify-center"}>
+				<div className={"flex flex-col items-center justify-center "}>
 
-			<div className={"flex flex-col items-center paragraph-styles text-lg font-bold"}>
-				<p></p>
-				<p>Sat TESTING</p>
-				<p>Sat TESTING</p>
-				<p>Sat TESTING</p>
-				<p></p>
-			</div>
+					<Gif className={""}/>
+					<HeaderNews title={"Upcoming"} hideImage={true} className={"!mb-10"}/>
 
-			<div className={"flex justify-center mt-10"}>
-				<Selectors title={"Book now"}  className={"!w-[250px] !text-lg "}/>
+					<Buttons label={"bambi burlesque"} to={"https://tickets.myguestlist.com/v26a337a2c5e665/bambi-burlesque-/evs6a337a2c65d41//?hl=en"}  className={"!w-[250px] !text-lg"}>
+
+					</Buttons>
+
+				</div>
 			</div>
-		</div>
 		</GooeyEffect>
 	)
 }
 export default Saturday
+
+

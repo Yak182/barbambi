@@ -2,7 +2,7 @@ import { useId } from 'react'
 import { Link } from 'react-router-dom'
 import GooeyEffect from "@/components/GooeyEffect/index.jsx";
 
-const Buttons = ({ label, to, className = '', hoverSrc }) => {
+const Buttons = ({ label, to, className = '', hoverSrc, }) => {
 	const id = useId();
 	const cleanId = id.replace(/:/g, '');
 	const gradientId = `button-gradient-${cleanId}`;
