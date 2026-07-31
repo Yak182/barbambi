@@ -2,6 +2,7 @@ varying vec2 vUv;
 
 uniform sampler2D uTexture;
 uniform sampler2D uHoverTexture;
+uniform bool uHasHoverTexture;
 uniform vec2 uMouse;
 uniform float uHoverStrength;
 uniform float uTime;
@@ -72,14 +73,13 @@ float snoise(vec3 v) {
 
 void main() {
     vec2 aspect = vec2(
-        min(uResolution.x / uResolution.y, 1.0),
-        min(uResolution.y / uResolution.x, 1.0)
+            min(uResolution.x / uResolution.y, 1.0),
+            min(uResolution.y / uResolution.x, 1.0)
     );
 
     vec2 mouse = uMouse;
-    
+
     vec4 image = texture2D(uTexture, vUv);
-    vec4 hover = texture2D(uHoverTexture, vUv);
 
     float circle = distance(vUv * aspect, mouse * aspect) * 0.5;
     circle = 1.0 - clamp(circle, 0.0, 1.0);
@@ -89,5 +89,11 @@ void main() {
 
     float mask = smoothstep(0.49, 0.51, circle + n * 0.1);
 
-    gl_FragColor = mix(image, hover, mask);
+    if (uHasHoverTexture) {
+        vec4 hover = texture2D(uHoverTexture, vUv);
+        vec3 finalColor = mix(image.rgb, hover.rgb, mask);
+        gl_FragColor = vec4(finalColor, image.a);
+    } else {
+        gl_FragColor = vec4(image.rgb, image.a * (1.0 - mask));
+    }
 }

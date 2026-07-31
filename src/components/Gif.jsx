@@ -13,6 +13,15 @@ const Gif = ({className = ""}) => {
 					alt=""
 					aria-hidden="true"
 				/>
+
+				<div className="relative inline-block -mt-15">
+					<p className="text-sm sm:text-base tracking-[0.3em] uppercase text-bar-bambi-gold">
+						Events
+					</p>
+					<p className="text-sm sm:text-base tracking-[0.3em] uppercase text-bar-bambi-gold wipe-overlay">
+						Events
+					</p>
+				</div>
 			</div>
 		</a>
 	)

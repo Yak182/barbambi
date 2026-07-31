@@ -4,15 +4,32 @@ import vertexShader from './vertex.glsl'
 import fragmentShader from './fragment.glsl'
 
 export default class Figure {
-	constructor(scene, camera, element) {
+	constructor(scene, camera, element, hoverEl) {
 		this.scene = scene
 		this.camera = camera
 		this.element = element
+		this.hoverEl = hoverEl || null
+		this.isHoverVideo = this.hoverEl instanceof HTMLVideoElement
 
 		this.loader = new THREE.TextureLoader()
 		this.loader.setCrossOrigin('anonymous')
 		this.texture = this.loader.load(this.element.src)
-		this.hoverTexture = this.loader.load(this.element.dataset.hover)
+
+		if (this.hoverEl) {
+			if (this.isHoverVideo) {
+				this.hoverTexture = new THREE.VideoTexture(this.hoverEl)
+				this.hoverTexture.minFilter = THREE.LinearFilter
+				this.hoverTexture.magFilter = THREE.LinearFilter
+				this.hoverTexture.generateMipmaps = false
+			} else {
+				this.hoverTexture = this.loader.load(this.hoverEl.src)
+				this.hoverTexture.minFilter = THREE.LinearFilter
+				this.hoverTexture.magFilter = THREE.LinearFilter
+				this.hoverTexture.generateMipmaps = false
+			}
+		} else {
+			this.hoverTexture = this.texture // dummy binding, unused by shader when uHasHoverTexture is false
+		}
 
 		this.smoothMouse = { x: 0, y: 0 }
 		this.hoverStrength = 0
@@ -52,6 +69,7 @@ export default class Figure {
 			uniforms: {
 				uTexture: { value: this.texture },
 				uHoverTexture: { value: this.hoverTexture },
+				uHasHoverTexture: { value: !!this.hoverEl },
 				uMouse: { value: new THREE.Vector2(0.5, 0.5) },
 				uHoverStrength: { value: 0 },
 				uCircleSharpness: { value: this.circleSharpness },
@@ -84,11 +102,17 @@ export default class Figure {
 	}
 
 	onMouseEnter() {
+		if (this.isHoverVideo) {
+			this.hoverEl?.play().catch(() => {})
+		}
 		gsap.killTweensOf(this)
 		gsap.to(this, { hoverStrength: 1, circleSharpness: 1 * this.sizeFactor, duration: 0.5, ease: 'power2.out' })
 	}
 
 	onMouseLeave() {
+		if (this.isHoverVideo) {
+			this.hoverEl?.pause()
+		}
 		gsap.killTweensOf(this)
 		gsap.to(this, { hoverStrength: 0, circleSharpness: 1 * this.sizeFactor, duration: 0.5, ease: 'power2.out' })
 	}
@@ -98,7 +122,6 @@ export default class Figure {
 		const containerRect = this.element.parentElement.getBoundingClientRect()
 		const x = (e.clientX - containerRect.left) / containerRect.width
 		const y = (e.clientY - containerRect.top) / containerRect.height
-		
 		gsap.to(this.smoothMouse, { x, y, duration: 0.5, ease: 'power2.out' })
 	}
 }

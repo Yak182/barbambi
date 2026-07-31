@@ -5,9 +5,11 @@ import Gif from "@/components/Gif.jsx";
 const HomePageV2 = () => {
 	return (
 		<GooeyEffect
-			hoverSrc="/bgImage_2.png"
+			src={"/gradient-bg.png"}
+			hoverSrc="public/media-videos/Grey-Goose_2.mp4"
 			className="w-full h-screen"
-			childrenClassName="w-full h-full relative"
+			childrenClassName="w-full h-full relative object-contain bg-gradient-to-b from-slate-700 via-slate-700/70 to-transparent "
+			isVideo={true}
 		>
 			<div className="flex flex-col sm:flex-row w-full h-full absolute inset-0">
 				<div className="relative w-full sm:w-1/2 h-full overflow-hidden z-10">
@@ -46,14 +48,14 @@ const HomePageV2 = () => {
 					<div className="flex flex-col gap-y-20">
 						<Buttons label="book now" to="/book-now" hoverSrc="/example_image.jpg" />
 						<Buttons label={`Thursday <br /> Pasta Party`} to={"/thursday-pasta-party"} hoverSrc={"/40fc0d67-eb9b-4f88-b2ac-8a0a004d636b.jpeg"} />
-						<Buttons label={"FRIDAYS LIVE"} to={"/Fridays-Live"} />
-						<Buttons label={`saturday <br /> dinner & disco`} to={"/Saturday-Dinner-and-Disco"} />
+						<Buttons label={"FRIDAYS LIVE"} to={"/Fridays-Live"} hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"} />
+						<Buttons label={`saturday <br /> dinner & disco`} to={"/Saturday-Dinner-and-Disco"} hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"} />
 					</div>
 					<div className="flex flex-col gap-y-20">
-						<Buttons label={`sunday<br />Sessions`} to={"/sunday-sessions"} />
-						<Buttons label={`Bambi <br /> brunch`} to={"/"} />
-						<Buttons label={`bottomless<br /> pasta party`} to={""} />
-						<Buttons label={`party like its<br /> your birthday`} to={"/upcoming"} />
+						<Buttons label={`sunday<br />Sessions`} to={"/sunday-sessions"} hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"} />
+						<Buttons label={`Bambi <br /> brunch`} to={"/"}  hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"}/>
+						<Buttons label={`bottomless<br /> pasta party`} to={""} hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"} />
+						<Buttons label={`party like its<br /> your birthday`} to={"/upcoming"} hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"} />
 					</div>
 				</div>
 			</div>

@@ -7,8 +7,8 @@ const PastaParty = () => {
     return (
 		<GooeyEffect
 			src={"/public/gradient-bg.png"}
-			hoverSrc="public/media-photos/diningwithPEOPLE.jpeg"
-			className="w-full min-h-screen"
+			hoverSrc={"public/media-photos/diningwithPEOPLE.jpeg"}
+			className="w-full min-h-screen bg-gradient-to-t from-black/90 via-black/20 to-transparent"
 			childrenClassName="w-full"
 		>
 			<div className={"flex flex-col items-center justify-center mx-auto"}>

@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import Figure from './Figure'
 
 export default class Scene {
-	constructor(element, container) {
+	constructor(element, container, hoverVideo) {
 		this.element = element
 		this.container = container
 
@@ -31,7 +31,7 @@ export default class Scene {
 
 		this.renderer.setSize(this.container.offsetWidth, this.container.offsetHeight)
 
-		this.figure = new Figure(this.scene, this.camera, this.element)
+		this.figure = new Figure(this.scene, this.camera, this.element, hoverVideo)
 
 		this.animate()
 		window.addEventListener('resize', this.onResize.bind(this))

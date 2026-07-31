@@ -6,7 +6,7 @@ const BookNow = () => {
     return (
 		<GooeyEffect
 			src={"public/media-photos/2c38d26b-ba88-48bf-bc3c-c49115efc166.jpeg"}
-			hoverSrc="public/media-photos/0d266c68-7939-46f8-90e1-903f14fa4a5e.jpeg"
+			hoverSrc={"public/media-photos/0d266c68-7939-46f8-90e1-903f14fa4a5e.jpeg"}
 			className="w-full min-h-screen"
 			childrenClassName="w-full"
 		>

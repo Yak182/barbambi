@@ -35,13 +35,11 @@ const Nav = () => {
 
 				{!isMenuOpen && (
 					<div className={"flex gap-4 "}>
-						<Buttons label={"1"} to={"/"} className={"!w-30 !text-sm !bg-transparent"}/>
+						<Buttons label={"1"} to={"/concept-2"} className={"!w-30 !text-sm "}/>
 						<Buttons label={"2"} to={"/concept-1"} className={"!w-30 !text-sm "}/>
 						<Buttons label={"3"} to={"/Book-now"} className={"!w-30 !text-sm "}/>
-						<Buttons label={"4"} to={"/sunday-sessions"} className={"!w-30 !text-sm "}/>
 						<Buttons label={"5"} to={"/thursday-pasta-party"} className={"!w-30 !text-sm "}/>
 						<Buttons label={"6"} to={"/upcoming"} className={"!w-30 !text-sm "}/>
-						<Buttons label={"7"} to={"/about"} className={"!w-30 !text-sm "}/>
 
 					</div>
 				)}

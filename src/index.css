@@ -96,7 +96,8 @@ select:has(option[value=""]:checked) {
 }
 
 .hover-wipe .wipe-overlay,
-.hover-wipe .wipe-overlay-white {
+.hover-wipe .wipe-overlay-white,
+.hover-wipe .wipe-overlay-yellow{
     position: absolute;
     inset: 0;
     clip-path: inset(0 100% 0 0);
@@ -105,9 +106,11 @@ select:has(option[value=""]:checked) {
 
 .hover-wipe .wipe-overlay { filter: url(#outline-black); }
 .hover-wipe .wipe-overlay-white { filter: url(#outline-white); }
+.hover-wipe .wipe-overlay-yellow { filter: url(#outline-yellow); }
 
 .hover-wipe:hover .wipe-overlay,
-.hover-wipe:hover .wipe-overlay-white {
+.hover-wipe:hover .wipe-overlay-white,
+.hover-wipe:hover .wipe-overlay-yellow {
     clip-path: inset(0 0 0 0);
 }
 
@@ -160,8 +163,8 @@ html, body, a, button, input, select, textarea, [role="button"] {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #FFFFFF; /* Change to your brand color */
-    pointer-events: none; /* Allows clicks to pass through */
+    background-color: #FFFFFF;
+    pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
     transition: opacity 0.2s ease, transform 0.2s ease;

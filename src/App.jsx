@@ -18,6 +18,7 @@ import CustomCursor from "./components/CustomCursor.jsx";
 import HomePageV2 from "@/pages/HomePagev2.jsx";
 import About from "@/pages/NavPages/About.jsx";
 import Hours from "@/pages/NavPages/Hours.jsx";
+import HomePageV3 from "@/pages/HomePageV3.jsx";
 
 function App() {
     return (
@@ -39,6 +40,7 @@ function App() {
                     <Route path={"/employment"} element={<Employment />}/>
                     <Route path={"/t&cs"} element={<TCs />}/>
                     <Route path={"/concept-1"} element={<HomePageV2 />}/>
+                    <Route path={"/concept-2"} element={<HomePageV3 />}/>
                     <Route path={"/about"} element={<About />}/>
                     <Route path={"/open-hours"} element={<Hours />}/>
                 </Routes>

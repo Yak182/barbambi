@@ -29,24 +29,28 @@ const Upcoming = () => {
 						</div>
 					</GooeyEffect>
 					<div className={"flex flex-col sm:flex-row justify-center w-full xl:h-[500px]"}>
+						<div className="flex items-start px-10 justify-center w-full max-h-full bg-red-500/25 z-[70]">
 							<EventDetailCard
-								className={"w-full "}
+								className={"w-full flex items-center justify-center"}
 								facts={[
+									{ label: "Attire", value: "Vintage Glam" },
+									{ label: "Cost", value: "$89pp" },
+									{ label: "Attire", value: "Vintage Glam" },
+									{ label: "Cost", value: "$89pp" },
 									{ label: "Attire", value: "Vintage Glam" },
 									{ label: "Cost", value: "$89pp" },
 								]}
 							/>
+						</div>
 						<div className="flex flex-col items-start px-10 justify-center w-full max-h-full bg-white z-[70]">
 							<div className="flex flex-col items-start text-bar-bambi-gold gap-3 ">
-								<p className={ "text-3xl py-10" }> Attire:
-
-
-								</p>
-
-
-								<div className={"flex items-center text-bar-bambi-gold gap-3"}>
-									<p className={ "text-3xl py-10" }> Cost: </p>
-								</div>
+								<EventDetailCard
+									className={"w-full flex items-center justify-center"}
+									facts={[
+										{ label: "Attire", value: "Vintage Glam" },
+										{ label: "Cost", value: "$89pp" },
+									]}
+								/>
 							</div>
 						</div>
 					</div>
