@@ -92,7 +92,8 @@ void main() {
     if (uHasHoverTexture) {
         vec4 hover = texture2D(uHoverTexture, vUv);
         vec3 finalColor = mix(image.rgb, hover.rgb, mask);
-        gl_FragColor = vec4(finalColor, image.a);
+        float finalAlpha = mix(image.a, hover.a, mask);
+        gl_FragColor = vec4(finalColor, finalAlpha);
     } else {
         gl_FragColor = vec4(image.rgb, image.a * (1.0 - mask));
     }

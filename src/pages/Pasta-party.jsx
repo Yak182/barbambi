@@ -5,13 +5,14 @@ import GooeyEffect from "@/components/GooeyEffect/index.jsx";
 
 const PastaParty = () => {
     return (
+
 		<GooeyEffect
 			src={"/public/gradient-bg.png"}
 			hoverSrc={"public/media-photos/diningwithPEOPLE.jpeg"}
 			className="w-full min-h-screen bg-gradient-to-t from-black/90 via-black/20 to-transparent"
 			childrenClassName="w-full"
 		>
-			<div className={"flex flex-col items-center justify-center mx-auto"}>
+			<div className={"flex flex-col items-center justify-center mx-auto mb-40"}>
 				<div className={"flex flex-col items-center"}>
 					<HeaderNews title={"Thursday Pasta Party"} className={"!py-2 !mb-0"} />
 					<p className={"paragraph-styles font-bold text-lg !mt-[-25px]"}>8pm - late</p>
@@ -29,7 +30,6 @@ const PastaParty = () => {
 					<Selectors title={"Book now"}  className={"!w-[250px] !text-lg "}/>
 				</div>
 			</div>
-
 		</GooeyEffect>
     )
 }

@@ -22,8 +22,21 @@ const HomePageV3 = () => {
 					<GooeyEffect
 						src={"/gradient-bg.png"}
 						className="w-full h-full"
-						childrenClassName="w-full h-full"
-					/>
+						childrenClassName="w-full h-full flex items-start justify-center gap-x-20 p-10 sm:p-20"
+					>
+							<div className="flex flex-col gap-y-20 ">
+								<Buttons label="book now" to="/book-now"  />
+								<Buttons label={`Thursday <br /> Pasta Party`} to={"/thursday-pasta-party"}  />
+								<Buttons label={"FRIDAYS LIVE"} to={"/Fridays-Live"}  />
+								<Buttons label={`saturday <br /> dinner & disco`} to={"/Saturday-Dinner-and-Disco"}  />
+							</div>
+							<div className="flex flex-col gap-y-20">
+								<Buttons label={`sunday<br />Sessions`} to={"/sunday-sessions"} />
+								<Buttons label={`Bambi <br /> brunch`} to={"/"} />
+								<Buttons label={`bottomless<br /> pasta party`} to={""} />
+								<Buttons label={`party like its<br /> your birthday`} to={"/upcoming"} />
+							</div>
+					</GooeyEffect>
 				</div>
 			</div>
 
@@ -42,21 +55,6 @@ const HomePageV3 = () => {
 						<Buttons label={`Bambi <br /> brunch`} to={"/"} />
 						<Buttons label={`bottomless<br /> pasta party`} to={""} />
 						<Buttons label={`party like its<br /> your birthday`} to={"/upcoming"} />
-					</div>
-				</div>
-
-				<div className="hidden sm:flex items-start justify-center w-1/2 h-full gap-x-20 p-10 sm:p-20 ">
-					<div className="flex flex-col gap-y-20">
-						<Buttons label="book now" to="/book-now" hoverSrc="public/example_image.jpg" className={"pointer-events-auto"} />
-						<Buttons label={`Thursday <br /> Pasta Party`} to={"/thursday-pasta-party"} hoverSrc={"/40fc0d67-eb9b-4f88-b2ac-8a0a004d636b.jpeg"} className={"pointer-events-auto"} />
-						<Buttons label={"FRIDAYS LIVE"} to={"/Fridays-Live"} hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"} className={"pointer-events-auto"}/>
-						<Buttons label={`saturday <br /> dinner & disco`} to={"/Saturday-Dinner-and-Disco"} hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"} className={"pointer-events-auto"}/>
-					</div>
-					<div className="flex flex-col gap-y-20">
-						<Buttons label={`sunday<br />Sessions`} to={"/sunday-sessions"} hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"} className={"pointer-events-auto"} />
-						<Buttons label={`Bambi <br /> brunch`} to={"/"}  hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"} className={"pointer-events-auto"}/>
-						<Buttons label={`bottomless<br /> pasta party`} to={""} hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"} className={"pointer-events-auto"}/>
-						<Buttons label={`party like its<br /> your birthday`} to={"/upcoming"} hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"} className={"pointer-events-auto"}/>
 					</div>
 				</div>
 
