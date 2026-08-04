@@ -13,7 +13,7 @@ const BookNow = () => {
 				<div>
 					<HeaderNews title={"Book Now"}/>
 
-					<div className={"paragraph-styles"}>
+					<div className={"paragraph-styles lowercase text-lg font-bold"}>
 						<p>BAR BAMBI IS A LATE NIGHT BAR SERVING ITALIAN COCKTAILS, WINE, SHARE PLATES & MUSIC THURSDAY - SUNDAY NIGHT.</p>
 						<p>FOR FIRST DATES, DINNER DATES, BIRTHDAY DATES AND OFFICE PARTY DATES. <br/>
 							BAR BAMBI TAKES BOOTH & TABLE BOOKINGS  FOR TWO RIGHT UP TO GROUPS OF 250.</p>
@@ -24,7 +24,7 @@ const BookNow = () => {
 
 
 					<div className="flex justify-center gap-20 py-14">
-						<Selectors title={"book now"}/>
+						<Selectors title={"book now"} target={"_blank"}/>
 						<Selectors title={"Enquire"}/>
 					</div>
 				</div>

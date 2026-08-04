@@ -19,6 +19,7 @@ import HomePageV2 from "@/pages/HomePagev2.jsx";
 import About from "@/pages/NavPages/About.jsx";
 import Hours from "@/pages/NavPages/Hours.jsx";
 import HomePageV3 from "@/pages/HomePageV3.jsx";
+import Rhythm from "@/pages/Rhythm.jsx";
 
 function App() {
     return (
@@ -43,6 +44,7 @@ function App() {
                     <Route path={"/concept-2"} element={<HomePageV3 />}/>
                     <Route path={"/about"} element={<About />}/>
                     <Route path={"/open-hours"} element={<Hours />}/>
+                    <Route path={"/Rhythm"} element={<Rhythm />}/>
                 </Routes>
             <Footer />
 

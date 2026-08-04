@@ -64,7 +64,6 @@
 
 
 .paragraph-styles {
-    text-transform: uppercase;
     text-align: center;
     color: #C8937E;
     font-family: "Engravers", "sans-serif" ;
@@ -175,3 +174,37 @@ html, body, a, button, input, select, textarea, [role="button"] {
     opacity: 0.25;
 }
 
+
+.page-curtain {
+    position: absolute;
+    inset: 0;
+    background-image: url("public/gradient-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: #1a0a14;
+    transform: translateY(100%);
+    will-change: transform;
+}
+
+.page-curtain.is-covering {
+    animation: curtain-in 500ms cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.page-curtain.is-uncovering {
+    animation: curtain-out 500ms cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes curtain-in {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+}
+
+@keyframes curtain-out {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-curtain { animation-duration: 1ms !important; }
+}
