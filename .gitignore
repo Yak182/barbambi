@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 /dist.zip
 public/media-videos/*.mp4
-public/media-videos/*.mp4
+public/media-videos/*.mov

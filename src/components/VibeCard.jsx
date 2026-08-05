@@ -6,14 +6,13 @@ const VibeCard = ({
                       href,
                       image,
                       imageAlt = "",
-                      media,                    // optional: any node (e.g. <VideoPlayer />) instead of an <img>
-                      children,                 // optional: replaces the whole card body
+                      media,
+                      children,
 
-                      // styling hooks
-                      className = "",           // outer container
-                      cardClassName = "",       // the card surface
+                      className = "",
+                      cardClassName = "",
                       titleClassName = "",
-                      mediaClassName = "",      // the aspect-ratio box
+                      mediaClassName = "",
                       imageClassName = "",
                       descriptionClassName = "",
 
