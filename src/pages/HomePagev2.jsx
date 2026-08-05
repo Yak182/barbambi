@@ -36,7 +36,7 @@ const HomePageV2 = () => {
                         </TransitionLink>
                     </div>
 
-                    <div className="flex sm:hidden flex-col items-center gap-y-6 w-full pb-10">
+                    <div className="flex flex-col md:hidden items-center gap-y-6 w-full pb-10">
                         <Buttons label="book now" to="/book-now" hoverSrc="/example_image.jpg"/>
                         <Buttons label={`Thursday <br /> Pasta Party`} to={"/thursday-pasta-party"}/>
                         <Buttons label={"FRIDAYS LIVE"} to={"/Fridays-Live"}/>
@@ -55,19 +55,19 @@ const HomePageV2 = () => {
                         <Buttons label={`Thursday <br /> Pasta Party`} to={"/thursday-pasta-party"}
                                  hoverSrc={"/40fc0d67-eb9b-4f88-b2ac-8a0a004d636b.jpeg"}/>
                         <Buttons label={"FRIDAYS LIVE"} to={"/Fridays-Live"}
-                                 hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"}/>
+                                 hoverSrc={"/media-photos/diningwithPEOPLE.jpeg"}/>
                         <Buttons label={`saturday <br /> dinner & disco`} to={"/Saturday-Dinner-and-Disco"}
-                                 hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"}/>
+                                 hoverSrc={"/media-photos/diningwithPEOPLE.jpeg"}/>
                     </div>
                     <div className="flex flex-col gap-y-20">
                         <Buttons label={`sunday<br />Sessions`} to={"/sunday-sessions"}
-                                 hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"}/>
+                                 hoverSrc={"/media-photos/diningwithPEOPLE.jpeg"}/>
                         <Buttons label={`Bambi <br /> brunch`} to={"/"}
-                                 hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"}/>
+                                 hoverSrc={"/media-photos/diningwithPEOPLE.jpeg"}/>
                         <Buttons label={`bottomless<br /> pasta party`} to={""}
-                                 hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"}/>
+                                 hoverSrc={"/media-photos/diningwithPEOPLE.jpeg"}/>
                         <Buttons label={`party like its<br /> your birthday`} to={"/upcoming"}
-                                 hoverSrc={"/public/media-photos/diningwithPEOPLE.jpeg"}/>
+                                 hoverSrc={"/media-photos/diningwithPEOPLE.jpeg"}/>
                     </div>
                 </div>
             </div>

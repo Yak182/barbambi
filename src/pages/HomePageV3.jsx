@@ -24,13 +24,13 @@ const HomePageV3 = () => {
                         className="w-full h-full"
                         childrenClassName="w-full h-full flex items-start justify-center gap-x-20 p-10 sm:p-20"
                     >
-                        <div className="flex flex-col gap-y-20 ">
+                        <div className="hidden sm:flex sm:flex-col gap-y-20 ">
                             <Buttons label="book now" to="/book-now"/>
                             <Buttons label={`Thursday <br /> Pasta Party`} to={"/thursday-pasta-party"}/>
                             <Buttons label={"FRIDAYS LIVE"} to={"/Fridays-Live"}/>
                             <Buttons label={`saturday <br /> dinner & disco`} to={"/Saturday-Dinner-and-Disco"}/>
                         </div>
-                        <div className="flex flex-col gap-y-20">
+                        <div className="hidden sm:flex sm:flex-col gap-y-20">
                             <Buttons label={`sunday<br />Sessions`} to={"/sunday-sessions"}/>
                             <Buttons label={`Bambi <br /> brunch`} to={"/"}/>
                             <Buttons label={`bottomless<br /> pasta party`} to={""}/>
